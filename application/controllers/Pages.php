@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Pages extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,10 +18,13 @@ class Page extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('template/header');
-		$this->load->view('pages/index');
-		$this->load->view('template/footer');
+	public function view($page = 'home'){
+		if (!file_exists(APPPATH.'views/pages/'.$page.'.php')){
+			show_404(); // Whoops, we don't have a page for that!
+		}
+
+		$this->load->view('templates/header');
+		$this->load->view('pages/'.$page);
+		$this->load->view('templates/footer');
 	}
 }
