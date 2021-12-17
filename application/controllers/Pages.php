@@ -1,17 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pages extends CI_Controller {
+class Pages extends CI_Controller{
 	public function view($page = 'home'){
-		if (!file_exists(APPPATH.'views/pages/' .$page . '.php')){
-			show_404(); // 404 Page
+		if(!file_exists(APPPATH.'views/pages/' .$page . '.php')){
+			show_404(); # 404 Page
 		}
 
-		$data['title'] = ucfirst($page); // Capitalize the first letter
+		$this->load->helper('url'); # Let the navigation bar use the URL inbuild functions
 
-		$this->load->view('templates/header', $data);
-		$this->load->view('templates/navigation', $data);
-		$this->load->view('pages/' . $page);
-		$this->load->view('templates/footer');
+
+		$this->load->view('templates/header'); # Header
+		$this->load->view('templates/navigation'); # Navigation
+		$this->load->view('pages/' . $page); # Page
+		$this->load->view('templates/footer'); # Footer
 	}
 }
