@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-success mb-4">
-    <!-- Title -->
-    <a class="navbar-brand p-0 pr-3" href=""><?= $title ?></a>
-    <!-- /Title -->
+    <!-- Title / homepage -->
+    <a class="navbar-brand p-0 pr-3" href="<?= site_url() ?>">Home</a>
+    <!-- /Title / homepage -->
 
     <!-- Navigation toggler -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,27 +11,23 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            
-            <!-- Registrations  -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="registerDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">test</a>
-                <div class="dropdown-menu" aria-labelledby="registerDropdownMenu">
-                    <a class="dropdown-item" href="empty/userRegistrationPage">test</a>
-                    <a class="dropdown-item" href="empty/horseRegistrationPage">test</a>
-                </div>
-            </li>
-            <!-- /Registrations -->
 
-            <!-- Edits / changes -->
+            <!-- About  -->
+            <li class="navbar-nav">
+                <a class="nav-link text-white" href="<?= site_url('about') ?>">About</a>
+            </li>
+            <!-- /About -->
+
+            <!-- navigation tests -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="changeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">test</a>
                 <div class="dropdown-menu" aria-labelledby="changeDropdownMenu">
-                    <a class="dropdown-item" href="empty/reservationsInformationPage">test</a>
-                    <a class="dropdown-item" href="empty/usersInformationPage">test</a>
-                    <a class="dropdown-item" href="empty/horsesInformationPage">test</a>
+                    <a class="dropdown-item" href="">test</a>
+                    <a class="dropdown-item" href="">test</a>
+                    <a class="dropdown-item" href="">test</a>
                 </div>
             </li>
-            <!-- /Edits / changes -->
+            <!-- /navigation tests -->
         </ul>
     </div>
 </nav>
